@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Articles</title>
+    <title>Artykuły</title>
 </head>
 <body>
-
-
+<h1>Artykuły w kategorii: <span th:text="${category.name}"></span></h1>
+<ul>
+    <li th:each="article : ${articles}">
+        <a th:href = "@{/details/{id}(id=${article.id})}" th:text="${article.title}"></a>
+    </li>
+</ul>
+<a th:href="@{/category}">Powrót do kategorii</a>
 </body>
 </html>

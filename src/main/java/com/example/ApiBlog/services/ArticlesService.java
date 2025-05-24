@@ -5,6 +5,8 @@ import com.example.ApiBlog.models.Articles;
 import com.example.ApiBlog.repository.ArticlesRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ArticlesService {
     private final ArticlesRepository articlesRepository;
@@ -19,6 +21,10 @@ public class ArticlesService {
         return articlesRepository.save(article);
 
     }
+
+
+
+
 
 
 

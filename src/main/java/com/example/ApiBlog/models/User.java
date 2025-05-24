@@ -40,8 +40,7 @@ public class User {
 
 
 
-    @OneToMany
-    @JoinColumn(name = "userId")
+    @OneToMany(mappedBy = "user")
     private List<Articles> articles = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER)

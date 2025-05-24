@@ -2,6 +2,9 @@ package com.example.ApiBlog.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 
 public class Category {
@@ -12,6 +15,10 @@ public class Category {
 
     @Column(unique = true, name = "name")
     private String name;
+
+
+    @OneToMany(mappedBy = "category")
+    private List<Articles> articles = new ArrayList<>();
 
     public  Category(){}
 
